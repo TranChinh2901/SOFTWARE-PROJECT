@@ -1,0 +1,51 @@
+
+import express from "express";
+
+// import userRouter from "@/routes/user";
+import authRouter from "@/routes/auth";
+import productRouter from "@/routes/products";
+import blogRouter from "@/routes/blogs";
+import { brandRoutes } from "@/routes/brands";
+import {categoryRoutes} from "@/routes/categories";
+import colorRouter from "@/routes/colors";
+import voucherRouter from "@/routes/vouchers";
+import productGalleryRouter from "@/routes/product-gallery";
+import productVariantRouter from "@/routes/product-variants";
+import { reviewRoutes } from "@/routes/reviews";
+import orderRouter from "@/routes/orders";
+import cartRouter from "@/routes/carts";
+// import userRouter from "@/routes/users";
+import bannerRouter from "@/routes/banners";
+import momoRouter from "@/routes/momo";
+
+const router = express.Router();
+const API_V1 = "/api/v1";
+
+router.use(`${API_V1}/auth`, authRouter);
+router.use(`${API_V1}/products`, productRouter);
+
+router.use(`${API_V1}/blogs`, blogRouter);
+
+router.use(`${API_V1}/brands`, brandRoutes);
+
+router.use(`${API_V1}/categories`, categoryRoutes);
+
+router.use(`${API_V1}/colors`, colorRouter);
+
+router.use(`${API_V1}/vouchers`, voucherRouter);
+
+router.use(`${API_V1}/product-gallery`, productGalleryRouter);
+
+router.use(`${API_V1}/product-variants`, productVariantRouter);
+
+router.use(`${API_V1}/reviews`, reviewRoutes);
+
+router.use(`${API_V1}/orders`, orderRouter);
+
+router.use(`${API_V1}/carts`, cartRouter);
+
+router.use(`${API_V1}/banners`, bannerRouter);
+
+router.use(`${API_V1}/momo`, momoRouter);
+
+export default router;
